@@ -1,0 +1,88 @@
+@use "variables" as v;
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: v.$circle-size;
+  height: v.$circle-size;
+  color: white;
+  margin: v.$circle-margin;
+
+  &.red-light {
+    &:hover,
+    &:focus {
+      background-color: #cc3232;
+    }
+  }
+
+  &.orange-light {
+    &:hover {
+      background-color: #e7b416;
+    }
+  }
+
+  &.green-light {
+    &:hover {
+      background-color: #2dc937;
+    }
+  }
+}
+#redLightAlert {
+  display: none;
+  padding: 10px;
+  margin-bottom: 20px; /* Adds space below the alert */
+  width: 90%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.traffic-light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 2rem auto;
+  padding-top: 20px; /* Adds padding above the traffic light */
+}
+
+.container {
+  background-color: v.$bg-color;
+  width: v.$container-width;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.pole {
+  width: 2rem;
+  height: 10rem;
+  background-color: v.$bg-color;
+  border-radius: 0rem;
+}
+
+@media (max-width: 768px) {
+  #redLightAlert {
+    width: 95%;
+  }
+}
