@@ -1,6 +1,6 @@
 /* Code base it seems to be good. But the traffic lights behavior does not seem to be fully functional.
-* When I try to click after one another, the color fades away. The color should be ON when selecting one.
-* Sometimes it happens when I hover over the selected light.*/
+ * When I try to click after one another, the color fades away. The color should be ON when selecting one.
+ * Sometimes it happens when I hover over the selected light.*/
 const alertBox = document.getElementById("trafficLightAlert");
 const iconContainer = document.getElementById("iconContainer");
 const alertText = document.getElementById("alertText");
@@ -43,18 +43,28 @@ function showAlert(type, message, iconKey) {
   }
 
   alertBox.style.display = "block";
-  setTimeout(() => {
-    alertBox.style.display = "none";
-  }, 3000);
 }
 
-// Event Listeners
-redLight.addEventListener("click", () =>
-  showAlert("danger", "Stop! The light is red.", "red")
-);
-orangeLight.addEventListener("click", () =>
-  showAlert("warning", "Caution! The light is yellow.", "orange")
-);
-greenLight.addEventListener("click", () =>
-  showAlert("success", "Go! The light is green.", "green")
-);
+function resetLights() {
+  redLight.classList.remove("active-red");
+  orangeLight.classList.remove("active-orange");
+  greenLight.classList.remove("active-green");
+}
+
+redLight.addEventListener("click", () => {
+  resetLights();
+  redLight.classList.add("active-red");
+  showAlert("danger", "Stop! The light is red.", "red");
+});
+
+orangeLight.addEventListener("click", () => {
+  resetLights();
+  orangeLight.classList.add("active-orange");
+  showAlert("warning", "Caution! The light is yellow.", "orange");
+});
+
+greenLight.addEventListener("click", () => {
+  resetLights();
+  greenLight.classList.add("active-green");
+  showAlert("success", "Go! The light is green.", "green");
+});

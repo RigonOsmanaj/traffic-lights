@@ -22,35 +22,49 @@ button {
   height: v.$circle-size;
   color: white;
   margin: v.$circle-margin;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
+  // Red Light
   &.red-light {
-    &:hover,
-    &:focus {
-      background-color: #cc3232;
+    background-color: #ffffff; // Default state
+
+    &.active-red {
+      background-color: #cc3232; // Active state
+    }
+
+    &:hover {
+      background-color: #ff6666; // Hover state
     }
   }
 
+  // Orange Light
   &.orange-light {
+    background-color: #ffffff; // Default state
+
+    &.active-orange {
+      background-color: #e7b416; // Active state
+    }
+
     &:hover {
-      background-color: #e7b416;
+      background-color: #ffcc66; // Hover state
     }
   }
 
+  // Green Light
   &.green-light {
+    background-color: #ffffff; // Default state
+
+    &.active-green {
+      background-color: #2dc937; // Active state
+    }
+
     &:hover {
-      background-color: #2dc937;
+      background-color: #66ff66; // Hover state
     }
   }
-}
-#redLightAlert {
-  display: none;
-  padding: 10px;
-  margin-bottom: 20px; /* Adds space below the alert */
-  width: 90%;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
 }
 
 .traffic-light {
