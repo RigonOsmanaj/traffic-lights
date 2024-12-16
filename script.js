@@ -1,3 +1,6 @@
+/* Code base it seems to be good. But the traffic lights behavior does not seem to be fully functional.
+* When I try to click after one another, the color fades away. The color should be ON when selecting one.
+* Sometimes it happens when I hover over the selected light.*/
 const alertBox = document.getElementById("trafficLightAlert");
 const iconContainer = document.getElementById("iconContainer");
 const alertText = document.getElementById("alertText");
